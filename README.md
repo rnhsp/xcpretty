@@ -13,6 +13,9 @@ $ gem install xcpretty
 ```
 
 ## Usage
+
+Piping xcodebuild's stdout with the default buffering can cause text to come out out of order. Out of order logs may show up as the number of run tests not matching what's expected due to the parsing problems. Buffering can be disabled by setting the environment variable `NSUnbufferedIO` to `YES` with e.g. `export NSUnbufferedIO=YES` for bash.
+
 ``` bash
 $ xcodebuild [flags] | xcpretty
 ```
